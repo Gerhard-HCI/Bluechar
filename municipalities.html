@@ -384,6 +384,11 @@ strong { color: var(--ink); font-weight: 600; }
 .nav-links a { white-space: nowrap; }
 @media (max-width: 880px){ .brand { margin-right: 0; } }
 
+
+  /* Prevent the nav flexbox from horizontally squeezing the logo on tablet widths */
+  .brand{flex:0 0 auto}
+  .brand-logo{flex:0 0 auto;width:auto;max-width:none;object-fit:contain}
+  .nav-links{min-width:0}
 </style>
 </head>
 <body data-nav-active="municipalities">
