@@ -179,7 +179,7 @@ strong { color: var(--ink); font-weight: 600; }
 .nav-toggle span { display:block; width: 20px; height: 2px; background: var(--navy); margin: 4px 0; transition: .2s; }
 .on-dark .nav-toggle span { background: var(--on-dark); }
 
-@media (max-width: 880px) {
+@media (max-width: 1200px) {
   .nav-toggle { display: block; }
   .nav-links {
     position: absolute; left: 0; right: 0; top: 72px;
@@ -382,13 +382,23 @@ strong { color: var(--ink); font-weight: 600; }
 /* ---------- Nav spacing refinements ---------- */
 .brand { margin-right: clamp(18px, 3vw, 40px); }
 .nav-links a { white-space: nowrap; }
-@media (max-width: 880px){ .brand { margin-right: 0; } }
+@media (max-width: 1200px){ .brand { margin-right: 0; } }
 
 
   /* Prevent the nav flexbox from horizontally squeezing the logo on tablet widths */
   .brand{flex:0 0 auto}
   .brand-logo{flex:0 0 auto;width:auto;max-width:none;object-fit:contain}
   .nav-links{min-width:0}
+
+  /* Full nav only where it actually fits; give the header room and tighten spacing */
+  @media (min-width:1201px){
+    .site-header .wrap.nav{max-width:1320px;padding-inline:clamp(16px,2.5vw,32px)}
+    .nav-links{gap:12px}
+    .nav-links a{font-size:.93rem;white-space:nowrap}
+    .brand{margin-right:18px}
+    .nav-cta{margin-left:8px}
+    .nav-cta .btn{padding:.6em 1em;font-size:.88rem;white-space:nowrap}
+  }
 </style>
 </head>
 <body data-nav-active="carbon">
